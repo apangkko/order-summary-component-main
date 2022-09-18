@@ -1,0 +1,161 @@
+:root {
+    --clr-paleBlue: hsl(225, 100%, 94%);
+    --clr-brightBlue: hsl(245, 75%, 52%);
+    --clr-veryPaleBlue: hsl(225, 100%, 98%);
+    --clr-desaturatedBlue: hsl(224, 23%, 55%);
+    --clr-darkBlue: hsl(223, 47%, 23%);
+
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, p {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: var(--clr-desaturatedBlue);
+    font-size: 1rem;
+    font-weight: 500;
+    background: url('images/pattern-background-mobile.svg') var(--clr-paleBlue);
+    background-position: top center;
+    background-repeat: no-repeat;   
+    padding: 1rem 0;
+}
+
+img, picture {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: 95%;
+    max-width: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+}
+
+.order-summmary {
+    padding: 1.5rem;
+}
+
+.heading {
+    color: var(--clr-darkBlue);
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin: .5rem 0 1rem;
+}
+
+.text {
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.order-box {
+    display: grid;
+    grid-template-columns: 4.2rem repeat(2, 1fr);
+    grid-template-areas: 
+    "ordericon name change"
+    "ordericon price change";
+    background-color: var(--clr-veryPaleBlue);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.icon {
+    grid-area: ordericon;
+    align-self: center;
+}
+
+.order-name {
+    color: var(--clr-darkBlue);
+    font-size: 1rem;
+    font-weight: 900;
+    grid-area: name;
+    justify-self: start;
+
+}
+
+.order-price {
+    grid-area: price;
+    justify-self: start;
+}
+
+.order-change {
+    grid-area: change;
+    color: var(--clr-brightBlue);
+    font-weight: 700;
+    align-self: center;
+    justify-self: end;
+    transition: .3s ease;
+}
+
+.order-change:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.btn {
+    display: block;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--clr-brightBlue);
+    border-radius: 10px;
+    box-shadow: 0 25px 15px -5px hsla(245, 75%, 52%, .2);
+    padding: 1em 0.25em;
+    margin-bottom: 1.5rem;
+    transition: .3s ease;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+.btn-cancel {
+    color: var(--clr-desaturatedBlue);
+    font-weight: 900;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.btn-cancel:hover {
+    color: var(--clr-darkBlue);
+}
+
+@media (min-width: 23.125rem) {
+    body {
+        background: url('images/pattern-background-desktop.svg') var(--clr-paleBlue);
+        background-position: top center;
+        background-repeat: no-repeat;
+    }
+
+    .order-summmary {
+        padding: 3rem;
+    }
+
+    .heading {
+        font-size: 1.8rem;
+        margin-top: 0;
+    }
+
+    .order-box {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        margin-bottom: 2rem;
+    }
+}

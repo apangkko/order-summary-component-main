@@ -42,6 +42,7 @@ img, picture {
     overflow: hidden;
     text-align: center;
     background-color: #fff;
+    box-shadow: 0 20px 15px -5px rgba(0, 0, 0, .1);
 }
 
 .order-summmary {
